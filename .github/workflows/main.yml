@@ -1,0 +1,14 @@
+name: Hello World Workflow
+
+# تعیین می‌کنیم چه زمانی این اتومیشن اجرا بشه (مثلاً با هر PUSH به مخزن)
+on: [push]
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest  # روی یک سرور مجازیِ لینوکسی اجرا می‌شه
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # کدها رو می‌کشه داخل سرور
+
+      - name: Print a message
+        run: echo "سلام دنیا! اولین پایپ‌لاین CI/CD من با موفقیت اجرا شد! 🚀"
